@@ -29,8 +29,8 @@ public class PartitionedExecutorServiceTest {
 
     @org.junit.Test
     public void testSubmit() throws Exception {
-        int partitions = 10;
-        PartitionedExecutorService pool = new PartitionedExecutorService(10,partitions);
+        int partitions = 2;
+        PartitionedExecutorService pool = new PartitionedExecutorService(2,partitions);
         long input = 0;
         final AtomicLong process = new AtomicLong();
         long start = System.currentTimeMillis();
