@@ -1,19 +1,15 @@
 package com.cloudimpl.tp;
 
 
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * Created by Nuwan on 11/29/2015.
  */
-public class ThreadEx extends Thread {
+public class Worker extends Thread {
 
 
-    ThreadPool.PartitionPool pool;
+    PartitionedExecutorService.PartitionPool pool;
     boolean needWakeup = false;
-    public ThreadEx(ThreadPool.PartitionPool pool)
+    public Worker(PartitionedExecutorService.PartitionPool pool)
     {
         this.pool = pool;
 

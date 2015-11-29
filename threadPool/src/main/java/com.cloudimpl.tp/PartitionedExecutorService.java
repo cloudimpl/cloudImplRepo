@@ -8,10 +8,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by Nuwan on 11/29/2015.
  */
-public class ThreadPool extends Thread{
+public class PartitionedExecutorService extends Thread{
 
     PartitionPool[] arrPool;
-    public ThreadPool(int max,int part)
+    public PartitionedExecutorService(int max, int part)
     {
         arrPool = new PartitionPool[part];
         int i = 0;
@@ -24,7 +24,7 @@ public class ThreadPool extends Thread{
         start();
     }
 
-    public ThreadPool(int max)
+    public PartitionedExecutorService(int max)
     {
         this(max,1);
     }
@@ -73,7 +73,7 @@ public class ThreadPool extends Thread{
         private final int max;
         private Queue<Tuple<Runnable,Object>> queue;
         private AtomicInteger counter = new AtomicInteger(0);
-        private Queue<ThreadEx> idles = new ConcurrentLinkedQueue<>();
+        private Queue<Worker> idles = new ConcurrentLinkedQueue<>();
         private int wait = 0;
         public PartitionPool(int max)
         {
@@ -112,7 +112,7 @@ public class ThreadPool extends Thread{
             return idles.isEmpty();
         }
 
-        public void putIdle(ThreadEx t)
+        public void putIdle(Worker t)
         {
             idles.add(t);
         }
@@ -127,9 +127,9 @@ public class ThreadPool extends Thread{
             return queue.poll();
         }
 
-        public ThreadEx createThread()
+        public Worker createThread()
         {
-            ThreadEx t = new ThreadEx(this);
+            Worker t = new Worker(this);
             t.start();
             alloc++;
             return t;
@@ -137,7 +137,7 @@ public class ThreadPool extends Thread{
 
         public void wakeupIdle()
         {
-            ThreadEx t   = idles.poll();
+            Worker t   = idles.poll();
             if(t != null)
                 t.wakeup();
         }

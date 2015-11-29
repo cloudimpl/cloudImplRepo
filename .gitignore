@@ -8,3 +8,4 @@
 cloudImplRepo.iml
 *.class
 threadPool/threadPool.iml
+.idea/uiDesigner.xml
