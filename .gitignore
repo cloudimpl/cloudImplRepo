@@ -1,0 +1,10 @@
+.idea/copyright/profiles_settings.xml
+.idea/.name
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+cloudImplRepo.iml
+*.class
+threadPool/threadPool.iml
