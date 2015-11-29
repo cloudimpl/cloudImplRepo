@@ -11,6 +11,7 @@
     <modules>
         <module>threadPool</module>
         <module>VirtualMachine</module>
+        <module>plugins</module>
     </modules>
 
 
