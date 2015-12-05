@@ -15,6 +15,8 @@
 */
 package com.cloudimpl.tp;
 
+import com.cloudimpl.core.Tuple;
+
 
 /**
  * Created by Nuwan on 11/29/2015.
