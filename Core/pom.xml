@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>virtualmachine</artifactId>
-    <dependencies>
-        <dependency>
-            <groupId>io.atomix</groupId>
-            <artifactId>atomix-all</artifactId>
-            <version>0.1.0-beta4</version>
-        </dependency>
-    </dependencies>
+    <artifactId>core</artifactId>
+
 
 </project>

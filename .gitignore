@@ -1,13 +1,3 @@
-.idea/copyright/profiles_settings.xml
-.idea/.name
-.idea/compiler.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/workspace.xml
-cloudImplRepo.iml
+.idea/*
+*.iml
 *.class
-threadPool/threadPool.iml
-.idea/uiDesigner.xml
-.idea/libraries/Maven__junit_junit_4_11.xml
-.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml

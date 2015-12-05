@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package com.cloudimpl.tp;
+package com.cloudimpl.core;
 
 /**
  * Created by Nuwan on 11/28/2015.
@@ -21,6 +21,7 @@ package com.cloudimpl.tp;
 public class Tuple<K,V> {
     private K k;
     private V v;
+
     public Tuple(K k,V v)
     {
         this.k = k;
@@ -33,5 +34,13 @@ public class Tuple<K,V> {
 
     public V getV() {
         return v;
+    }
+
+    @Override
+    public String toString() {
+        return "Tuple{" +
+                "k=" + k +
+                ", v=" + v +
+                '}';
     }
 }
