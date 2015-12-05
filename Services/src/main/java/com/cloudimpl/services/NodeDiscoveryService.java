@@ -47,8 +47,9 @@ public abstract class NodeDiscoveryService implements Runnable{
 
     }
 
-    public static abstract class NodeInfoPublisher
+    public static interface  NodeInfoPublisher
     {
-        public abstract void send(String host,int port) throws Exception;
+        void send(String host,int port) throws Exception;
+        void close();
     }
 }

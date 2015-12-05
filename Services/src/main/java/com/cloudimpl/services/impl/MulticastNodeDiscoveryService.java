@@ -46,6 +46,7 @@ public class MulticastNodeDiscoveryService extends NodeDiscoveryService {
                 e.printStackTrace();
             }
         }
+        receiver.close();
     }
 
     private void onNodeInfo(String nodeInfo) {
@@ -73,7 +74,7 @@ public class MulticastNodeDiscoveryService extends NodeDiscoveryService {
         return new MulticastPublisher(multicastIP,port);
     }
 
-    public static final class  MulticastPublisher extends NodeInfoPublisher
+    public static final class  MulticastPublisher implements NodeInfoPublisher
     {
         DatagramSocket sender;
         String multicastAddr;
@@ -91,6 +92,11 @@ public class MulticastNodeDiscoveryService extends NodeDiscoveryService {
             String msg = MessageFormat.format("{0}:{1}",host, Long.toString(port));
             DatagramPacket msgPacket = new DatagramPacket(msg.getBytes(),msg.length(),group,this.port);
             sender.send(msgPacket);
+        }
+
+        public void close()
+        {
+            sender.close();
         }
     }
 }
