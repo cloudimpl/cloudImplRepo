@@ -15,6 +15,9 @@
 */
 package com.cloudimpl.tp;
 
+import com.cloudimpl.core.PartitionedExecutorService;
+import com.cloudimpl.core.LoggerService;
+import com.cloudimpl.services.impl.LogBackLoggerService;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
@@ -29,8 +32,9 @@ public class PartitionedExecutorServiceTest {
 
     @org.junit.Test
     public void testSubmit() throws Exception {
-        int partitions = 2;
-        PartitionedExecutorService pool = new PartitionedExecutorService(2,partitions);
+        LoggerService service = new LogBackLoggerService(false, "E:/test.log", "%date|%level|[%thread]|%logger{10}|[%file:%line]|%msg%n");
+        int partitions = 10;
+        PartitionedExecutorService pool = new PartitionedExecutorService(service.getLogger(PartitionedExecutorService.class.getName()),2,partitions);
         long input = 0;
         final AtomicLong process = new AtomicLong();
         long start = System.currentTimeMillis();

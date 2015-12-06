@@ -1,5 +1,5 @@
 import com.cloudimpl.core.NotificationChannel;
-import com.cloudimpl.services.NodeDiscoveryService;
+import com.cloudimpl.core.NodeDiscoveryService;
 import com.cloudimpl.services.impl.MulticastNodeDiscoveryService;
 
 import static java.lang.Thread.sleep;

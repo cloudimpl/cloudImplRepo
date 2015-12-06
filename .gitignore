@@ -1,6 +1,17 @@
 .idea/*
+*/target/**
+*/target/*
 *.iml
 *.class
 /Msgs/target/
 *.jar
 *.iml
+*.netbeans_automatic_build
+threadPool/target/maven-archiver/pom.properties
+Raft/target/maven-archiver/pom.properties
+Services/target/maven-archiver/pom.properties
+Plugins/target/maven-archiver/pom.properties
+Plugins/target/maven-archiver/pom.properties
+VirtualMachine/target/maven-archiver/pom.properties
+threadPool/target/maven-archiver/pom.properties
+Services/target/maven-archiver/pom.properties

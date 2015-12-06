@@ -1,0 +1,11 @@
+{"namespace": "com.cloudimpl.msgs.raft",
+  "type": "record",
+  "name": "AppendEntry",
+  "fields": [
+    {"name": "term", "type": "int"},
+    {"name": "leader_id",  "type": ["string", "null"]},
+    {"name": "previous_log_index", "type": "int"},
+    {"name": "previous_log_term", "type": "int"},
+    {"name": "entries", "type": {"type":"array","items" : "AppendEntry"}}
+  ]
+}
